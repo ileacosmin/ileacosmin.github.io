@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmin Ilea - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cosmin Ilea</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/cosmin.ilea" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/ileacosmin" target="_blank">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>My Projects</h2>
+
+        <section id="smart-knob" class="project-detail">
+            <h3>1. Smart Knob in Building Automation Applications (Bachelor Thesis)</h3>
+            <p>This was my bachelor's thesis project at the Technical University of Cluj-Napoca, where I designed, built, and validated a centralized controller for a smart home. The objective was to simplify the interaction with smart devices by offering a physical, tactile interface that eliminates the need for multiple mobile applications.</p>
+
+            <h4>Key Contributions and Technologies:</h4>
+            <ul>
+                <li><strong>Mechanical Design:</strong> I created a custom, 3D-printed enclosure that allowed the display's cable to pass through the hollow shaft of the motor, ensuring 360-degree rotation without the risk of entanglement.</li>
+                <li><strong>Haptic Feedback:</strong> I implemented an advanced haptic feedback system using a <strong>Brushless DC (BLDC)</strong> motor and the <strong>Field-Oriented Control (FOC)</strong> technique. This allowed for the creation of unique physical sensations, such as discrete detents for fan speed control and spring-like end-stops for adjusting volume or temperature.</li>
+                <li><strong>Real-Time Firmware:</strong> The firmware was developed in C++ on an <strong>ESP32</strong> microcontroller with a dual-core architecture. I used FreeRTOS to separate the time-critical motor control logic from other tasks (like communication and display updates), ensuring instant and uninterrupted haptic feedback.</li>
+                <li><strong>Smart Home Integration:</strong> The device communicates with the <strong>Home Assistant</strong> platform using the <strong>MQTT</strong> protocol. I configured <code>MQTT sensors</code> and <code>automations</code> in Home Assistant to translate physical interactions (rotation, press) into commands for various devices, such as lights and media players.</li>
+            </ul>
+            <p>You can find the full thesis document here: <a href="assets/Ilea_Cosmin_Ionut.pdf" target="_blank">Smart Knob Thesis (PDF)</a></p>
+        </section>
+
+        <section id="home-lab" class="project-detail">
+            <h3>2. Home Lab Infrastructure Management</h3>
+            <p>I built and manage a personal server (`home lab`) on an HP ProDesk 600 G2 mini PC. It runs <strong>Ubuntu Server</strong> and hosts a variety of services via <strong>Docker</strong> and <strong>Portainer</strong>, demonstrating practical skills in system administration and infrastructure management.</p>
+
+            <h4>Technical Details and Applications:</h4>
+            <ul>
+                <li><strong>Containerization:</strong> I implemented a <strong>Docker</strong> runtime environment, managing services like <strong>Home Assistant</strong>, <strong>Nextcloud</strong> (a self-hosted file storage service), and a <strong>MariaDB</strong> database, all running in containers.</li>
+                <li><strong>Secure Networking:</strong> Remote access to the server is achieved via <strong>SSH</strong> and a <strong>Tailscale VPN</strong>, ensuring a secure connection without exposing public services to the internet.</li>
+                <li><strong>Automation and Monitoring:</strong> I configured an automated watchdog to restart network services in case of connectivity loss, ensuring continuous availability. I also use <strong>Cockpit</strong> for monitoring resources (CPU, storage).</li>
+            </ul>
+        </section>
+
+        <section id="smartbreeze" class="project-detail">
+            <h3>3. SmartBreeze: IR Air Conditioner Control</h3>
+            <p>This IoT project was designed to remotely control an infrared (IR) air conditioner using an Android mobile application and an <strong>ESP32</strong> microcontroller. The system mimics the functions of a traditional remote control (power toggle, temperature adjustment, fan speed control) through a wireless connection over Wi-Fi.</p>
+
+            <h4>Technologies and Implementation:</h4>
+            <ul>
+                <li><strong>Platforms:</strong> The Android application was developed with <strong>Kotlin</strong> and <strong>Jetpack Compose</strong>. The firmware for the <strong>ESP32</strong> was written in <strong>C++</strong> using the Arduino Framework.</li>
+                <li><strong>Communication:</strong> Interaction between the mobile app and the ESP32 is done via a <strong>WebSocket</strong> connection on a local Wi-Fi network.</li>
+                <li><strong>Functionality:</strong> The ESP32 receives commands from the app, parses them, and sends the corresponding IR signals to the air conditioner unit.</li>
+            </ul>
+            <p>You can find the project documentation here: <a href="assets/SmartBreezeDoc.pdf" target="_blank">SmartBreeze Documentation (PDF)</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cosmin Ilea. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
